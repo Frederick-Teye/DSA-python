@@ -48,3 +48,13 @@ class BinaryTree:
             print(f"{current_node.data}", end=" ")
             _pre_order_traversal(current_node.left)
             _pre_order_traversal(current_node.right)
+
+    def post_order_traversal(self):
+        if self.root is not None:
+            _post_order_traversal(self.root)
+
+    def _post_order_traversal(self, current_node):
+        if current_node is not None:
+            _post_order_traversal(current_node.left)
+            _post_order_traversal(current_node.right)
+            print(current_node.data, end=" ")
