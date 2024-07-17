@@ -1,7 +1,7 @@
 from binary_tree import BinaryTree as BT
 
 bn_tree = BT()
-data = [8, 10, 3, 14, 6, 13, 7, 4, 1, 13]
+data = [8, 10, 3, 14, 6, 13, 7, 4, 1]
 
 for element in data:
     bn_tree.insert(element)
