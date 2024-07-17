@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -58,3 +61,19 @@ class BinaryTree:
             self._post_order_traversal(current_node.left)
             self._post_order_traversal(current_node.right)
             print(current_node.data, end=" ")
+
+    def level_order_traversal(self):
+        if self.root is None:
+            return
+        queue = deque()
+        queue.append(self.root)
+
+        while len(queue) > 0:
+            current_node = queue.popleft()
+            print(current_node.data, end=" ")
+
+            if current_node.left is not None:
+                queue.append(current_node.left)
+
+            if current_node.right is not None:
+                queue.append(current_node.right)
