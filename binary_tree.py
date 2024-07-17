@@ -28,3 +28,23 @@ class BinaryTree:
                 _insert(data, current_node.right)
         else:
             print(f"{data} already exists in the tree!")
+
+    def in_order_traversal(self):
+        if self.root is not None:
+            _in_order_traversal(self.root)
+
+    def _in_order_traversal(self, current_node):
+        if current_node is not None:
+            _in_order_traversal(current_node.left)
+            print(f"{current_node.data}", end=" ")
+            _in_order_traversal(current_node.right)
+
+    def pre_order_traversal(self):
+        if self.root is not None:
+            _pre_order_traversal(self.root)
+
+    def _pre_order_traversal(self, current_node):
+        if current_node is not None:
+            print(f"{current_node.data}", end=" ")
+            _pre_order_traversal(current_node.left)
+            _pre_order_traversal(current_node.right)
